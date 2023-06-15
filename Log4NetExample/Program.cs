@@ -13,17 +13,15 @@ namespace Log4NetExample
         {
             XmlConfigurator.Configure(new System.IO.FileInfo("log4net.config"));
 
-            //ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-            //log4net.ILog log = log4net.LogManager.GetLogger(typeof(Program));
+            string text = Console.ReadLine();
 
-            log.Info("Hello logging world!");
+            log.Info(text);
 
-            log.Debug("Hello logging world!");
+            log.Debug(DateTime.Now + " : " + text);
 
-            log.Debug("Did it again!");
 
             Console.WriteLine("Hit enter");
-
+            log.Debug(DateTime.Now + " : " + text);
 
             Console.ReadKey();
         }
