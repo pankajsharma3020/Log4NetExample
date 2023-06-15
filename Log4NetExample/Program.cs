@@ -2,6 +2,7 @@
 using log4net;
 using log4net.Config;
 
+[assembly: log4net.Config.XmlConfigurator(ConfigFile = "app.config", Watch = true)]
 namespace Log4NetExample
 {
     static class Program
@@ -11,7 +12,8 @@ namespace Log4NetExample
 
         static void Main(string[] args)
         {
-            XmlConfigurator.Configure(new System.IO.FileInfo("log4net.config"));
+            XmlConfigurator.Configure();
+            //XmlConfigurator.Configure(new System.IO.FileInfo("log4net.config"));
 
             string text = Console.ReadLine();
 
